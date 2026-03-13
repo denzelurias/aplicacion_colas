@@ -47,7 +47,7 @@ int main() {
 
     // En espera
     cola<cliente> en_espera;
-
+    //Hola
     // Hacemos un primer cooldown para el primer cliente
     int cooldown_espera = aleatorio(COOLDOWN_ESPERA_MINIMA, COOLDOWN_ESPERA_MAXIMA);
     // Pantalla dos
