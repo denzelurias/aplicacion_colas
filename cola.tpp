@@ -72,7 +72,7 @@ template <typename T> T cola<T>::frente() const {
 }
 
 //****************************************************************************
-template <typename T> T& cola<T>::fondo() const {
+template <typename T> T cola<T>::fondo() const {
     if (estaVacia()) throw std::runtime_error("Error: La cola está vacía.");
 
     return _fondo->_valor;

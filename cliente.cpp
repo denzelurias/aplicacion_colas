@@ -6,8 +6,8 @@
 #include "auxiliares.h"
 
 // Tiempos en caja
-#define CAJA_TIEMPO_MIN 5
-#define CAJA_TIEMPO_MAX 15
+#define CAJA_TIEMPO_MIN 7
+#define CAJA_TIEMPO_MAX 25
 
 // Arreglo constante de 20 nombres
 const std::string nombres[20] = {
@@ -36,23 +36,14 @@ cliente::cliente() {
 
     this->nombre_completo = nombres[nombre] + " " + apellidos[apellido];
     this->tiempo_requerido = aleatorio(CAJA_TIEMPO_MIN, CAJA_TIEMPO_MAX);
-    this->tiempo_atendido = 0;
 }
 
 std::string cliente::obtenerNombre() const{
     return this->nombre_completo;
 }
 
-void cliente::atender() {
-    ++(this->tiempo_atendido);
-}
-
 int cliente::obtenerTiempoRequerido() const {
     return this->tiempo_requerido;
-}
-
-int cliente::obtenerTiempoAtendido() const {
-    return this->tiempo_atendido;
 }
 
 std::ostream &operator<<(std::ostream &salida, const cliente &c) {

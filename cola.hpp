@@ -24,7 +24,7 @@ public:
 
     T frente() const;
 
-    T& fondo() const;
+    T fondo() const;
 
     void vaciar();
 

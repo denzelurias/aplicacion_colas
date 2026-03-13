@@ -25,9 +25,6 @@ public:
 private:
     std::string nombre_completo;
     unsigned short tiempo_requerido;
-
-public:
-    unsigned short tiempo_atendido;
 };
 
 
