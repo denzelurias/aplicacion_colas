@@ -33,7 +33,7 @@ std::string caja::obtenerNombre(){
 }
 
 void caja::agregarCaja(cliente p){
-    return this->_atendidos.agregar(p);
+    this->_atendidos.agregar(p);
 }
 
 int caja::tamanoCaja() const{
