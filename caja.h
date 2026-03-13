@@ -16,12 +16,30 @@ public:
 
     void elQueSigue();
 
+    //Método obtTiempoRequerido
+    int obtenerTiempoRequerido();
+
+
+    //Método ObtenerTiempoAtendido
     int obtenerTiempoAtendido();
 
-    cola<cliente> _atendidos;
+    //Método agregar
+    void agregarCaja(cliente p);
+
+    //Metodo Tamaño
+    int tamanoCaja() const;
+
+    //Método Imprimir
+    void imprimir() const;
+
+    //Método ObtenerNombre
+    std::string obtenerNombre();
+
+
 
 private:
     unsigned short _tiempo_atendido;
+    cola<cliente> _atendidos;
 };
 
 

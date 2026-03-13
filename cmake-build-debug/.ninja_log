@@ -1,0 +1,12 @@
+# ninja log v6
+9	278	7950694317682328	CMakeFiles/cola.dir/auxiliares.cpp.obj	2e5b25fe26821b8a
+12	284	7950694317712324	CMakeFiles/cola.dir/caja.cpp.obj	f2e3f820f3e069da
+7	333	7950694317650427	CMakeFiles/cola.dir/cliente.cpp.obj	bf70c35df831822
+737	811	7950697224519459	cola.exe	f3d309fb53d28559
+4	737	7950697217192611	CMakeFiles/cola.dir/main.cpp.obj	de2430194728aff4
+7	282	7950697963683370	CMakeFiles/cola.dir/auxiliares.cpp.obj	2e5b25fe26821b8a
+9	285	7950697963703357	CMakeFiles/cola.dir/caja.cpp.obj	f2e3f820f3e069da
+5	319	7950697963652027	CMakeFiles/cola.dir/cliente.cpp.obj	bf70c35df831822
+1	758	7950697963622531	CMakeFiles/cola.dir/main.cpp.obj	de2430194728aff4
+758	829	7950697971195192	cola.exe	f3d309fb53d28559
+7	299	7950707449199899	CMakeFiles/cola.dir/caja.cpp.obj	f2e3f820f3e069da

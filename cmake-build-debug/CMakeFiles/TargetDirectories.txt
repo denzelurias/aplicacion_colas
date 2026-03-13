@@ -1,0 +1,3 @@
+C:/Users/ange1/CLionProjects/aplicacion_colas/cmake-build-debug/CMakeFiles/cola.dir
+C:/Users/ange1/CLionProjects/aplicacion_colas/cmake-build-debug/CMakeFiles/edit_cache.dir
+C:/Users/ange1/CLionProjects/aplicacion_colas/cmake-build-debug/CMakeFiles/rebuild_cache.dir
