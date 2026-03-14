@@ -41,11 +41,9 @@ int main() {
     caja caja_dos;
     caja caja_tres;
 
-    /*
-    bool uno_eliminar = false;
-    bool dos_eliminar = false;
-    bool tres_eliminar = false;
-    */
+    bool pausa_caja_uno = false;
+    bool pausa_caja_dos = false;
+    bool pausa_caja_tres = false;
 
     // En espera
     cola<cliente> en_espera;
@@ -60,53 +58,63 @@ int main() {
 
         // Caja uno
         if (caja_uno.estaOcupada()) {
+            caja_uno.atender();
             std::cout << "\tLa caja uno está atendiendo a " << caja_uno.obtenerNombre()
                       << "\t\tTiempo de atención: " << caja_uno.obtenerTiempoAtendido();
             if (caja_uno.obtenerTiempoAtendido() == caja_uno.obtenerTiempoRequerido()) {
                 caja_uno.desocupar();
                 caja_uno.elQueSigue();
+                pausa_caja_uno = true;
             }
-            else
-                caja_uno.atender();
         }
         else {
-            std::cout << "\tLa caja uno está desocupada";
-
-            if (!en_espera.estaVacia()) {
+            if (pausa_caja_uno) {
+                std::cout << "\tLa caja uno está desocupada";
+                pausa_caja_uno = false;
+            }
+            else if (!en_espera.estaVacia()) {
                 caja_uno.agregarCaja(en_espera.frente());
                 en_espera.eliminar();
-                //uno_eliminar = true;
                 caja_uno.ocupar();
+                caja_uno.atender();
+
+                std::cout << "\tLa caja uno está atendiendo a " << caja_uno.obtenerNombre()
+                          << "\t\tTiempo de atención: " << caja_uno.obtenerTiempoAtendido();
             }
             else {
+                std::cout << "\tLa caja uno está desocupada";
                 caja_uno.desocupar();
             }
         }
 
         std::cout << "\n\n";
 
-        // Caja dps
+        // Caja dos
         if (caja_dos.estaOcupada()) {
+            caja_dos.atender();
             std::cout << "\tLa caja dos está atendiendo a " << caja_dos.obtenerNombre()
                       << "\t\tTiempo de atención: " << caja_dos.obtenerTiempoAtendido();
             if (caja_dos.obtenerTiempoAtendido() == caja_dos.obtenerTiempoRequerido()) {
                 caja_dos.desocupar();
                 caja_dos.elQueSigue();
+                pausa_caja_dos = true;
             }
-            else
-                caja_dos.atender();
         }
         else {
-            std::cout << "\tLa caja dos está desocupada";
-
-            if (!en_espera.estaVacia()) {
-                //Se ondeo el denzel aqui
+            if (pausa_caja_dos) {
+                std::cout << "\tLa caja dos está desocupada";
+                pausa_caja_dos = false;
+            }
+            else if (!en_espera.estaVacia()) {
                 caja_dos.agregarCaja(en_espera.frente());
                 en_espera.eliminar();
-                //dos_eliminar = true;
                 caja_dos.ocupar();
+                caja_dos.atender();
+                std::cout << "\tLa caja dos está atendiendo a " << caja_dos.obtenerNombre()
+                          << "\t\tTiempo de atención: " << caja_dos.obtenerTiempoAtendido();
             }
             else {
+                std::cout << "\tLa caja dos está desocupada";
                 caja_dos.desocupar();
             }
         }
@@ -115,26 +123,30 @@ int main() {
 
         // Caja tres
         if (caja_tres.estaOcupada()) {
+            caja_tres.atender();
             std::cout << "\tLa caja tres está atendiendo a " << caja_tres.obtenerNombre()
                       << "\t\tTiempo de atención: " << caja_tres.obtenerTiempoAtendido();
             if (caja_tres.obtenerTiempoAtendido() == caja_tres.obtenerTiempoRequerido()) {
                 caja_tres.desocupar();
                 caja_tres.elQueSigue();
+                pausa_caja_tres = true;
             }
-            else
-                caja_tres.atender();
         }
         else {
-            std::cout << "\tLa caja tres está desocupada";
-
-            if (!en_espera.estaVacia()) {\
-                //Falta metodo agregar a caja
+            if (pausa_caja_tres) {
+                std::cout << "\tLa caja tres está desocupada";
+                pausa_caja_tres = false;
+            }
+            else if (!en_espera.estaVacia()) {
                 caja_tres.agregarCaja(en_espera.frente());
                 en_espera.eliminar();
-                //tres_eliminar = true;
                 caja_tres.ocupar();
+                caja_tres.atender();
+                std::cout << "\tLa caja tres está atendiendo a " << caja_tres.obtenerNombre()
+                          << "\t\tTiempo de atención: " << caja_tres.obtenerTiempoAtendido();
             }
             else {
+                std::cout << "\tLa caja tres está desocupada";
                 caja_tres.desocupar();
             }
         }
@@ -152,25 +164,24 @@ int main() {
         std::cout << "En espera:\n";
         if (!en_espera.estaVacia()) en_espera.imprimir();
 
-        /*
-        if (uno_eliminar) {
-            en_espera.eliminar();
-            uno_eliminar = false;
-        }
-        if (dos_eliminar) {
-            en_espera.eliminar();
-            dos_eliminar = false;
-        }
-        if (tres_eliminar) {
-            en_espera.eliminar();
-            tres_eliminar = false;
-        }
-        */
 
 
         std::this_thread::sleep_for(std::chrono::milliseconds(1000));
         --cooldown_espera;
         limpiarPantalla();
+    }
+
+    std::cout << "Terminó el tiempo de atención de la caja\n";
+
+    std::cout << "Las cajas terminarán de atender a:\n";
+    if (caja_uno.estaOcupada()) {
+        std::cout << caja_uno.obtenerNombre() << '\n';
+    }
+    if (caja_dos.estaOcupada()) {
+        std::cout << caja_dos.obtenerNombre() << '\n';
+    }
+    if (caja_tres.estaOcupada()) {
+        std::cout << caja_tres.obtenerNombre() << '\n';
     }
 
     // Atendidos por caja 1:
