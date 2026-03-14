@@ -41,9 +41,11 @@ int main() {
     caja caja_dos;
     caja caja_tres;
 
+    /*
     bool uno_eliminar = false;
     bool dos_eliminar = false;
     bool tres_eliminar = false;
+    */
 
     // En espera
     cola<cliente> en_espera;
@@ -72,8 +74,8 @@ int main() {
 
             if (!en_espera.estaVacia()) {
                 caja_uno.agregarCaja(en_espera.frente());
-                //en_espera.eliminar();
-                uno_eliminar = true;
+                en_espera.eliminar();
+                //uno_eliminar = true;
                 caja_uno.ocupar();
             }
             else {
@@ -100,8 +102,8 @@ int main() {
             if (!en_espera.estaVacia()) {
                 //Se ondeo el denzel aqui
                 caja_dos.agregarCaja(en_espera.frente());
-                //en_espera.eliminar();
-                dos_eliminar = true;
+                en_espera.eliminar();
+                //dos_eliminar = true;
                 caja_dos.ocupar();
             }
             else {
@@ -128,8 +130,8 @@ int main() {
             if (!en_espera.estaVacia()) {\
                 //Falta metodo agregar a caja
                 caja_tres.agregarCaja(en_espera.frente());
-                //en_espera.eliminar();
-                tres_eliminar = true;
+                en_espera.eliminar();
+                //tres_eliminar = true;
                 caja_tres.ocupar();
             }
             else {
@@ -150,6 +152,7 @@ int main() {
         std::cout << "En espera:\n";
         if (!en_espera.estaVacia()) en_espera.imprimir();
 
+        /*
         if (uno_eliminar) {
             en_espera.eliminar();
             uno_eliminar = false;
@@ -162,6 +165,7 @@ int main() {
             en_espera.eliminar();
             tres_eliminar = false;
         }
+        */
 
 
         std::this_thread::sleep_for(std::chrono::milliseconds(1000));
