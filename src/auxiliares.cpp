@@ -3,7 +3,8 @@
 //
 
 #include <iostream>
-#include "auxiliares.h"
+
+#include "../include/auxiliares.h"
 
 void limpiarPantalla() {
 #ifdef _WIN32

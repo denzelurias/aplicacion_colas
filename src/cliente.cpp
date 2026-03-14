@@ -2,8 +2,8 @@
 // Created by denzelurias on 3/11/26.
 //
 
-#include "cliente.h"
-#include "auxiliares.h"
+#include "../include/cliente.h"
+#include "../include/auxiliares.h"
 
 // Tiempos en caja
 #define CAJA_TIEMPO_MIN 7

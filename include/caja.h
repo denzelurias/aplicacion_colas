@@ -6,7 +6,7 @@
 #define COLA_CAJA_H
 
 #include "cliente.h"
-#include "cola.hpp"
+#include "cola.h"
 
 class caja {
 public:

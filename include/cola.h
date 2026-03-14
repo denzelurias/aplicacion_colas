@@ -46,6 +46,6 @@ private:
     elemento *_fondo;
 };
 
-#include "cola.tpp"
+#include "../src/cola.tpp"
 
 #endif // QUEUE_HPP

@@ -6,10 +6,11 @@
 #include <thread>
 #include <chrono>
 #include <cstdlib>
-#include "cola.hpp"
-#include "cliente.h"
-#include "auxiliares.h"
-#include "caja.h"
+
+#include "../include/cola.h"
+#include "../include/cliente.h"
+#include "../include/auxiliares.h"
+#include "../include/caja.h"
 
 // Tiempos
 #define TIEMPO_MINIMO 120

@@ -2,7 +2,7 @@
 // Created by Denzel Urias on 12/03/26.
 //
 
-#include "caja.h"
+#include "../include/caja.h"
 
 caja::caja() {
     this->_tiempo_atendido = 0;
