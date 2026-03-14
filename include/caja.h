@@ -19,12 +19,14 @@ public:
     //Método obtTiempoRequerido
     int obtenerTiempoRequerido();
 
-
     //Método ObtenerTiempoAtendido
     int obtenerTiempoAtendido();
 
+    //Método ObtenerNombre
+    std::string obtenerNombre();
+
     //Método agregar
-    void agregarCaja(cliente p);
+    void agregarCaja(const cliente &p);
 
     //Metodo Tamaño
     int tamanoCaja() const;
@@ -32,13 +34,17 @@ public:
     //Método Imprimir
     void imprimir() const;
 
-    //Método ObtenerNombre
-    std::string obtenerNombre();
+    bool estaOcupada() const;
 
+    void ocupar();
 
+    void desocupar();
+
+    unsigned int tamano() const;
 
 private:
     unsigned short _tiempo_atendido;
+    bool _ocupada;
     cola<cliente> _atendidos;
 };
 
